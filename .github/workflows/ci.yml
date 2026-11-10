@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      CGO_ENABLED: '0'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.26.x'
+          cache: false
+      - run: go vet ./...
+      # Tests tagged live require an explicit opt-in and are excluded here.
+      - run: go test ./...
+      - name: race tests
+        env:
+          CGO_ENABLED: '1'
+        run: go test -race ./internal/broker/... ./internal/store/... ./internal/drivers/...

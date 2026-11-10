@@ -1,0 +1,8 @@
+{
+  "name": "herd-msg",
+  "version": "0.1.0",
+  "description": "Durable messages between local coding sessions.",
+  "mcpServers": {
+    "herd-msg-receiver": { "command": "herd-msg", "args": ["receiver"] }
+  }
+}

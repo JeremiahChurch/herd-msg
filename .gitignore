@@ -1,0 +1,10 @@
+.claude/worktrees/
+__pycache__/
+*.pyc
+.venv/
+/dist/
+# Local probe and mailbox evidence; never commit.
+evidence/
+*.db
+*.db-wal
+*.db-shm

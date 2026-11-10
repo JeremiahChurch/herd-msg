@@ -1,0 +1,5 @@
+{
+  "name": "herd-msg-local",
+  "owner": {"name": "herd-msg"},
+  "plugins": [{"name": "herd-msg", "source": "./claude-plugin", "description": "Durable messages between coding sessions"}]
+}
